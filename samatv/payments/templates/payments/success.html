@@ -1,0 +1,14 @@
+{%extends "payments/base.html"%}
+{% load static %}
+{%block content%}
+<div class="h-100 d-flex w-100 p-0 m-0">
+    <div class="w-50 h-25 flex-column d-flex m-auto">
+        <div class="p-0 h-100 w-100 flex-column mb-auto"><p style="font-size: 5rem; margin: 0; height: auto; justify-self: center; width: auto; text-align: center;">Thank You!</p>
+            <div class="h-25 mb-auto d-flex justify-content-center"><p style="font-size: 1.5em; margin-right: 10px;" class="my-auto">Payment Succesful</p><img class="my-auto" style="height: 50px !important;" src="{%static 'payments/accept.png'%}"><br>
+            </div>
+            <div class="w-100 mt-2 text-align-center d-flex justify-content-center"><a href="{%url 'home'%}">Back to home</a></div>
+
+        </div>
+    </div>
+</div>
+{%endblock content%}

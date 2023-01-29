@@ -1,0 +1,93 @@
+{%extends "payments/base.html"%}
+{% load static %}
+{%block content%}
+<style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0 4em;
+}
+
+main {
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  -o-border-image: linear-gradient(to right, #89de89 0%, #006800 100%);
+     border-image: linear-gradient(to right, #89de89 0%, #006800 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px;
+  counter-increment: section;
+  position: relative;
+  color: #34435E;
+}
+p:before {
+  content: counter(section);
+  position: absolute;
+  border-radius: 50%;
+
+  height: 1.25em;
+  width: 1.25em;
+  background-color: rgb(137, 222, 137);
+  text-align: center;
+  line-height: 1.25em;
+  color: black;
+  font-size: 1em;
+}
+
+p:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+}
+p:nth-child(odd):before {
+  left: 100%;
+  margin-left: -20px;
+}
+
+p:nth-child(even) {
+  border-left: 3px solid;
+  padding-right: 0;
+}
+p:nth-child(even):before {
+  right: 100%;
+  margin-right: -20px;
+}
+
+p:first-child {
+  border-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+p:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+p{
+  margin-left: 7%;
+  margin-right: 7%;
+}
+</style>
+<div class="wrapper d-flex h-100 w-100 p-0 flex-column">
+<main class=""style="padding-top: 50px;">
+  <p data-aos="fade-right">Established in the year 2002 in Pune, we aim to provide quality education to all children, and provide equal opportunities for children from less fortunate backgrounds as others.</p>
+  <p data-aos="fade-left">"समत्व" means equality in Hindi. Our goal is to provide each individual an equal opportunity to prove his/her worth.</p>
+  <p  data-aos="fade-right"> Expanded into 20 cities by 2008. Over 30 thousand children benefited. </p>
+  <p  data-aos="fade-left">Started the Volunteering program in 2010. Our volunteers provide Educational classes, Mentoring, Career guidance, etc. to less fortunate children.</p>
+  <p  data-aos="fade-right">Having presence in over 50 cities today. Over 1 Lac children benefited from our organisation. Over 9 Lac ₹ raised and counting...</p>
+</main>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+{%endblock content%}

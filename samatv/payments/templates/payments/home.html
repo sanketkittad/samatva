@@ -1,0 +1,92 @@
+{%extends "payments/base.html"%}
+{% load static %}
+{%block content%}
+<style>
+ 
+
+
+
+/* CSS */
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+  background-color: #008035;
+  border: 1px solid #008035;
+}
+
+@media (min-width: 768px) {
+  .button-37 {
+    padding: 10px 30px;
+  }
+}
+
+</style>
+<div class="wrapper d-flex h-100 w-100 p-0 flex-column">
+
+<div class="h-auto p-0"style="position: relative;">
+  <div class="d-flex w-25 flex-column p-0" id="img-top-text"style="position: absolute; margin-top: 100px; margin-left:20px;color: azure;">For just over 100₹ a month, you can make sure someone gets an equal opportunity to a quality Education.
+    <button class="button-37 mt-3  w-75"><a href="{%url 'donate'%}" style="text-decoration: none; color: white;">Donate Now</a></button>
+  </div>
+  
+  <img src="{%static 'payments/children.jpg'%}" id="img-top"style="height: 100vh; width: 100%;">
+</div>
+<div class="d-flex row m-0 p-0 " style="height: 50vh; width:100%; border-bottom: 1px solid black;background-color: rgb(211, 255, 211);">
+  <div class="d-flex col-sm p-0 h-100" data-aos="zoom-out-right"><img src="{%static 'payments/kid.jpg'%}" style="height: 100%; width: 100%; padding: 0;"></div>
+  <div class="d-flex col-sm  p-0 h-100 justify-content-center" style=" border-bottom: 1px solid black; margin-left: auto;">
+    <div class="d-flex m-auto "data-aos="fade-left">Over    <div class="px-1 h-auto count mb-auto">12372</div>      children's educational expenses sponsored</div><br>
+  </div>
+</div>
+<div class="p-0 row w-100 m-0 d-flex resp-marg" style="height: 50vh; border-bottom: 1px solid black;background-color: rgb(211, 255, 211);">
+  <div class="d-flex  col-sm h-100 justify-content-center" style="border-bottom: 1px solid black;">
+    <div class="d-flex m-auto" data-aos="fade-right">Over    <div class="px-1 count h-auto mb-auto">9287372</div>₹ Raised to develop teaching and coordination infrastructure and counting...</div>
+  </div>
+  <div class="d-flex col-sm-4 p-0 h-100" data-aos="zoom-out-left"><img src="{%static 'payments/learning.jpg'%}" style="height: 100%; width: 100%;padding: 0;"></div>
+  
+</div>
+<div class="d-flex w-100 row p-0 m-0 resp-marg" style="height: 50vh; border-bottom: 1px solid black;background-color: rgb(211, 255, 211);">
+  <div class="d-flex col-sm-4 h-100 p-0" data-aos="zoom-out-right"><img src="{%static 'payments/teach.jpg'%}" style="padding:0;height:  100%; width: 100%; border-bottom: 1px solid black;"></div>
+  <div class="d-flex col-sm h-100 justify-content-center" style="border-bottom: 1px solid black;">
+    <div class="d-flex m-auto" data-aos="fade-left">Over    <div class="px-1 count h-auto mb-auto">4000</div>      teaching volunteers</div><br>
+  </div>
+</div>
+<div class="p-0 row w-100 m-0 d-flex resp-marg" style="height: 50vh; border-bottom: 1px solid black;background-color: rgb(211, 255, 211);">
+  <div class="d-flex col-sm h-100 justify-content-center" style=" border-bottom: 1px solid black;">
+    <div class="d-flex m-auto" data-aos="fade-right">Active in Over    <div class="px-1 count h-auto mb-auto" style="height: fit-content;">50</div>cities. Mumbai, Pune, Bengaluru, Hyderabad,etc. and much more.</div>
+  </div>
+  <div class="d-flex col-sm-4 h-100 p-0" data-aos="zoom-out-left"><img src="{%static 'payments/school.jpg'%}" style="height: 100%; width: 100%;padding: 0;"></div>
+  
+</div>
+<div class="p-0 d-flex m-0 w-100 resp-marg row py-4 px-3" style="height: 50vh; font-size: 1rem;background-color: rgb(211, 255, 211);">
+  <div class="my-auto d-flex w-100 flex-column" data-aos="fade-up"><p >Education should be a necessity, not a Luxury. Every child should be provided equal opportunities to educate themselves(समत्व).
+  Our mission is to provide every child the opportunity to prove themselves and provide them with quality education, mentorship, and technological support.
+    Join us today, to help us provide quality education for all children.</p>
+  <p>You can Donate to our organisation directly from this site.</p>
+  <p>You can also contact us for volunteering through the contact us enqiry form.</p> 
+</div>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+{%endblock content%}

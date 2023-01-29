@@ -1,0 +1,144 @@
+{%extends "payments/base.html"%}
+{% load static %}
+{%block content%}
+    <style>
+      button{
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+  background-color: #008035;
+  border: 1px solid #008035;
+}
+
+      body,html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    }
+    #container {
+    border: solid 3px #474544;
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+    height: auto;
+    transition: 0.3s;
+  }
+  input {
+  line-height: normal;
+  color: #5A5A5A;
+  font: inherit;
+  margin: 0;
+}
+input[type='text'], [type='email'],[type='number'] {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #474544;
+	color: #474544;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1em 0;
+	padding: 0 0 0.5em 0;
+  text-transform: uppercase;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, [type='number']:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+    .form-text1{
+      display: flex;
+      width: 100%;
+      padding-bottom: 5px;
+    }
+    .form-text1 input[type='text'],input[type='email'],input[type='number']{
+      margin-left: auto;
+      width:75%;
+    }
+    .razorpay-click input[type='submit']{
+      width:75%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .change{
+      width:auto; 
+    }
+     
+    </style>
+  
+    <div class="
+    d-flex h-100 w-100 p-0 flex-column">
+
+      <div class="container-fluid  d-flex mx-auto change pt-3 pb-3 mb-5 flex-column" id="container" style="margin-top: 100px;">
+        <form method="POST">
+          {%csrf_token%}
+          <div class="form-text1">
+          Name: <input type="text" name="name" required id="name"></div>
+          <div class="form-text1">Email: <input type="email" name="email" required id="email"></div>
+          
+          <div class="form-text1">Amount: <input type="number" name="amount" required id="amount"></div>
+          <div class="form-text1 justify-content-center my-1"><button type="submit" >Submit</button></div>
+        </form>
+        {% if payment%}<div class="container-fluid d-flex flex-column razorpay-click" style="line-height: 30px;">
+            Name: {{name}}<br>
+            Email: {{email}}<br>
+            Amount: {{amount}}₹<br>
+        <form action="{%url 'success'%}" class="d-flex" method="POST">
+          
+          {%csrf_token%}
+          <script
+              src="https://checkout.razorpay.com/v1/checkout.js"
+              data-key="rzp_test_sscbOZLTAWcG9D" 
+              data-amount="{{payment.amount}}" 
+              data-currency="INR"
+              data-order_id="{{payment.id}}"
+              data-buttontext="Proceed"
+              data-name="Samatv"
+              data-description="Educate a Child"
+              data-image="{%static 'payments/logo.png'%}"
+              data-prefill.name="{{name}}"
+              data-prefill.email="{{email}}"
+              data-theme.color="#F37254"
+          ></script>
+          <input type="hidden" custom="Hidden Element" name="hidden">
+          </form>
+          </div>
+        {%endif%}
+      </div>
+      
+    </div>
+{%endblock content%}
